@@ -271,26 +271,6 @@ tar -xvf elasticsearch-7.4.0-linux-x86_64.tar.gz
 cd elasticsearch-7.4.0/bin
 ./elasticsearch
 ```
-
-____
-
-## Elastic Search
-Elasticsearch is a distributed open-source search engine released under Apache license. It is a REST API layer over Apache’s Lucene. It provides horizontal scalability, reliability and capability of a real-time search through the documents. Elasticsearch is able to search faster because it uses indexing to search over documents.
-
-### Installation
-**Download**
-```
-curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz
-```
-**Extract**
-```
-tar -xvf elasticsearch-7.4.0-linux-x86_64.tar.gz
-```
-**Run**
-```
-cd elasticsearch-7.4.0/bin
-./elasticsearch
-```
 **Verify**
 [http://localhost:9200](http://localhost:9200)
 
@@ -337,3 +317,19 @@ cd kibana-7.4.0-linux-x86_64/bin
 ```
 **Verify**
 [http://localhost:5601](http://localhost:5601)
+
+____
+
+## Preinstalled Alternatives
+* Using a [docker container](https://hub.docker.com/r/anshgyl/devops)
+```
+docker pull anshgyl/devops
+docker run -it -P anshgyl/devops /bin/bash
+```
+* Using the preconfigured docker compose file in this repository
+```
+docker-compose up
+```
+* Downloading a virtual machine (ova format)
+https://iiitborg-my.sharepoint.com/:u:/g/personal/ansh_goyal_iiitb_org/EQu5cR7OIMhMofW28Ip-xg4ByQxyUtTo-0cEzwOmiWb4uA?e=aWVpqe
+

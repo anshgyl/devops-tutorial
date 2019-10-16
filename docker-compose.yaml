@@ -1,0 +1,27 @@
+#Author: Ansh Goyal
+version: '3.2'
+
+services:
+
+  devops:
+    image: anshgyl/devops:latest
+    tty: true
+    ports:
+      - "8080:8080"
+      - "4440:4440"
+      - "9200:9200"
+      - "9300:9300"
+      - "5000:5000"
+      - "9600:9600"
+      - "5601:5601"
+    volumes:
+      - ./home:/home/devops/
+    networks:
+      - devops
+
+networks:
+  devops:
+    driver: bridge
+
+volumes:
+  devops:
