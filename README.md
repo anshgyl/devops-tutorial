@@ -1,16 +1,16 @@
-#DevOps Toolchain Setup Tutotial
+# DevOps Toolchain Setup Tutotial
 ____
 
-##Java (OpenJDK8)
+## Java (OpenJDK8)
 Java is a general-purpose programming language that is class-based, object-oriented and designed to have as few implementation dependencies as possible.
 
-###Installation
+### Installation
 ```
 apt update
 apt install openjdk-8-jdk
 ```
 
-###Configure $JAVA_HOME
+### Configure $JAVA_HOME
 openjdk8 is located at /usr/lib/jvm/java-8-openjdk-amd64/jre/bin/java
 
 Open /etc/environment
@@ -33,14 +33,14 @@ Verify that the environment variable is set:
 echo $JAVA_HOME
 ```
 
-####Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)
+#### Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-18-04)
 
 ____
 
-##Git
+## Git
 Git is a distributed version control system, it is a tool to manage your project source code history. Git is one of the most widely-used popular version control system in use today. For example, teams at Amazon and Microsoft have adopted git as their version control system for many of their projects. Git is Open Source and you can create a public or private file system which can be accessible by your project team.
 
-###Installation
+### Installation
 ```
 apt update
 apt install git
@@ -55,7 +55,7 @@ Output
 git version X.X.X
 ```
 
-###Configuration
+### Configuration
 ```
 git config --global user.name "Your Name"
 git config --global user.email "youremail@domain.com"
@@ -66,14 +66,14 @@ If you want to edit your name or email you can edit the following file
 nano ~/.gitconfig
 ```
 
-####Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04-quickstart)
+#### Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-git-on-ubuntu-18-04-quickstart)
 
 ____
 
-##Maven
+## Maven
 Maven is a build automation tool primarily used for java projects.Build process for a simple peice of code like a "hello world!" would not be complicated but in the case of huge projects there might be several dependencies and plugins required to make an executable.In such cases , a set of instructions to add the plugins and dependencies required must be given during build automation. Maven takes this information from pom.xml file. Therefore to use maven for build automation pom.xml file is required.
 
-###Installation
+### Installation
 ```
 apt install maven
 ```
@@ -89,16 +89,16 @@ Java version: X.X.X_X, vendor: Private Build, runtime: /usr/lib/jvm/java-X-openj
 Default locale: en_US, platform encoding: ANSI_X3.4-1968
 OS name: "linux", version: "4.9.184-linuxkit", arch: "amd64", family: "unix"
 ```
-####Ref: [Mkyong](https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/)
+#### Ref: [Mkyong](https://www.mkyong.com/maven/how-to-install-maven-in-ubuntu/)
 
 ____
 
-##Jenkins
+## Jenkins
 Suppose, you have a team of 10 people. Everybody is writing code and wants to test their changes. Someone needs to collect all the new packages and then compile it. But if an error arises its very difficult to figure out which piece of code caused that error.
 
 Jenkins is a continuous integration tool. Jenkins maintains a pipeline that will compile, build and test the code maintaining a context to the user. If found any failure, Jenkins can alert the corresponding contributor.
 
-###Installation
+### Installation
 
 **Add the key**
 ```
@@ -113,7 +113,7 @@ apt update
 apt install jenkins
 ```
 
-###Starting Jenkins
+### Starting Jenkins
 
 ```
 service jenkins start
@@ -126,14 +126,14 @@ service jenkins status
 
 Jenkins runs on port 8080 by default, therefore we can open [localhost:8080/](http://localhost:8080/) to use jenkins
 
-###Enable Firewall
+### Enable Firewall
 If unable to run jenkins then use the following commands
 ```
 sudo ufw allow OpenSSH
 sudo ufw enable
 ```
 
-###Setting up Jenkins
+### Setting up Jenkins
 
 Use the password provided by followind command to unlock jenkins
 ```
@@ -141,11 +141,11 @@ cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 Choose install suggested plugins, configure user and it's done! 
 
-####Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04)
+#### Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-jenkins-on-ubuntu-18-04)
 
 ____
 
-##Docker
+## Docker
 Docker is a continuous delivery tool. 
 In a business enterprise, requirements keep changing and new updates keep waiting for deployment.
 
@@ -162,7 +162,7 @@ There are many issues can be faced throughout the stages.
 * Docker abstarcts the application from any kernel dependency using its docker layer.
 * Applications environment can be created and maintanined as a script in Dockerfile which can be updated, reviewed and reused.
 
-###Installation
+### Installation
 
 Installing a few prerequisite packages
 ```
@@ -182,7 +182,7 @@ apt install docker-ce
 Check if docker is successfully installed by seeing if status is active 
 service docker status
 
-###Executing Docker commands without sudo
+### Executing Docker commands without sudo
 ```
 usermod -aG docker ${USER}
 su - ${USER}
@@ -192,11 +192,11 @@ Confirm that your user is now added to the docker group by typing:
 id -nG
 ```
 
-####Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
+#### Ref: [Digital Ocean](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04)
 
 ____
 
-##Docker Compose
+## Docker Compose
 In a large business enterprise, there are various microservices handling different functionalities of the system. Each microservice should be dockerised and must be able to communicate with each other. Docker-compose is a tool that helps in defining and running multi-container docker applications.</br>
 
 **Advantages over docker**
@@ -205,7 +205,7 @@ In a large business enterprise, there are various microservices handling differe
 * As each component of a product is deployed as a separate container, it is straightforward to scale 
  application.
 
-###Installation
+### Installation
 ```
 curl -L https://github.com/docker/compose/releases/download/1.21.2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
@@ -221,10 +221,10 @@ docker-compose version 1.21.2, build a133471
 
 ____
 
-##Rundeck
+## Rundeck
 Rundeck is an open source automation service with a web console, command line tools and a WebAPI. It lets you easily run automation tasks across a set of nodes.
 
-###Installation
+### Installation
 ```
 echo "deb https://rundeckpro.bintray.com/deb stable main" | tee /etc/apt/sources.list.d/rundeck.list
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 379CE192D401AB61
@@ -232,7 +232,7 @@ apt update
 apt install rundeckpro-cluster
 ```
 
-###Starting Rundeck
+### Starting Rundeck
 ```
 service rundeckd start
 ```
@@ -250,14 +250,14 @@ Logging in for the first time
 Navigate to [http://localhost:4440/](http://localhost:4440/) in a browser.
 Log in with the ***username: admin*** and ***password: admin***
 
-####Ref: [Rundeck Docs](https://docs.rundeck.com/docs/administration/install/ubuntudebian.html)
+#### Ref: [Rundeck Docs](https://docs.rundeck.com/docs/administration/install/ubuntudebian.html)
 
 ____
 
-##Elastic Search
+## Elastic Search
 Elasticsearch is a distributed open-source search engine released under Apache license. It is a REST API layer over Apache’s Lucene. It provides horizontal scalability, reliability and capability of a real-time search through the documents. Elasticsearch is able to search faster because it uses indexing to search over documents.
 
-###Installation
+### Installation
 **Download**
 ```
 curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz
@@ -274,10 +274,10 @@ cd elasticsearch-7.4.0/bin
 
 ____
 
-##Elastic Search
+## Elastic Search
 Elasticsearch is a distributed open-source search engine released under Apache license. It is a REST API layer over Apache’s Lucene. It provides horizontal scalability, reliability and capability of a real-time search through the documents. Elasticsearch is able to search faster because it uses indexing to search over documents.
 
-###Installation
+### Installation
 **Download**
 ```
 curl -L -O https://artifacts.elastic.co/downloads/elasticsearch/elasticsearch-7.4.0-linux-x86_64.tar.gz
@@ -296,10 +296,10 @@ cd elasticsearch-7.4.0/bin
 
 ____
 
-##Logstash
+## Logstash
 Logstash is an open-source, a server-side tool that is used to collect, parse and then process data centrally into a structured form. It provides various filters that enhance the insights and human readability.
 
-###Installation
+### Installation
 **Download**
 ```
 curl -L -O https://artifacts.elastic.co/downloads/logstash/logstash-7.4.0.tar.gz
@@ -318,10 +318,10 @@ cd  logstash-7.4.0/bin
 
 ____
 
-##Kibana
+## Kibana
 Kibana is a tool to visualise indexed data in real-time. It provides a variety of visualisations to get the best meaning out of your data. Dashboards according to use case can be created and get updated with new data automatically.
 
-###Installation
+### Installation
 **Download**
 ```
 curl -L -O https://artifacts.elastic.co/downloads/kibana/kibana-7.4.0-linux-x86_64.tar.gz
