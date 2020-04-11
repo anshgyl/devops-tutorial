@@ -250,6 +250,27 @@ Logging in for the first time
 Navigate to [http://localhost:4440/](http://localhost:4440/) in a browser.
 Log in with the ***username: admin*** and ***password: admin***
 
+### Creating the Resource File
+Save the following contents to the resource.xml file
+```
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  
+<node name="<Any Name>" description="<Any Description>" tags="" 
+hostname="x.x.x.x" osArch="amd64" osFamily="unix" 
+osName="Linux" osVersion="4.15.0-46-generic" 
+username="<Username That Has Sudo Permission>" sudo-command-enabled="true" 
+sudo-password-option="option.sudoPassword"/>
+  
+</project>
+```
+
+To check the details like osVersion, osArch etc, use the following command
+```
+uname -a
+```
+
 #### Ref: [Rundeck Docs](https://docs.rundeck.com/docs/administration/install/ubuntudebian.html)
 
 ____
