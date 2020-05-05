@@ -226,10 +226,10 @@ Rundeck is an open source automation service with a web console, command line to
 
 ### Installation
 ```
-echo "deb https://rundeckpro.bintray.com/deb stable main" | tee /etc/apt/sources.list.d/rundeck.list
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 379CE192D401AB61
+echo "deb https://rundeck.bintray.com/rundeck-deb /" | sudo tee -a /etc/apt/sources.list.d/rundeck.list
+curl 'https://bintray.com/user/downloadSubjectPublicKey?username=bintray' | sudo apt-key add -
 apt update
-apt install rundeckpro-cluster
+apt install rundeck
 ```
 
 ### Starting Rundeck
