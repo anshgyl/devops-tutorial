@@ -271,7 +271,7 @@ To check the details like osVersion, osArch etc, use the following command
 uname -a
 ```
 
-#### Ref: [Rundeck Docs](https://docs.rundeck.com/docs/administration/install/ubuntudebian.html)
+#### Ref: [Rundeck Docs](https://docs.rundeck.com/docs/administration/install/linux-deb.html)
 
 ____
 
